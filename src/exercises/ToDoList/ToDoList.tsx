@@ -59,7 +59,7 @@ class ToDoList extends React.Component<any, IState, ITodos> {
         return (
             <>
                 <input className="Description" type="text" onChange={this.inputHandler}/>
-                <button onClick={this.addTodo}>Add To do</button>
+                <button style={{margin: "15px"}} onClick={this.addTodo}>Add To do</button>
                 <ul>
                     {this.state.todos.map(todo => {
                         return (
@@ -75,6 +75,7 @@ class ToDoList extends React.Component<any, IState, ITodos> {
                         )
                     })}
                 </ul>
+                <span>Click on the task to mark it as done</span>
             </>
         )
     }
