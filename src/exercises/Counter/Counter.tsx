@@ -1,5 +1,4 @@
 import React from 'react';
-import { number } from 'prop-types';
 
 interface IProps{
     counterStart: number;
