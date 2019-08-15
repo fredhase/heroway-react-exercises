@@ -1,10 +1,12 @@
 import React from 'react';
 import './App.css';
 
-import HelloWorld from './exercises/HelloWorld';
-import ToggleLike from './exercises/ToggleLike';
-import Counter from './exercises/Counter';
-import ToDoList from './exercises/ToDoList';
+import HelloWorld from './exercises/Hello/HelloWorld';
+import ToggleLike from './exercises/ToogleLike/ToggleLike';
+import Counter from './exercises/Counter/Counter';
+import ToDoList from './exercises/ToDoList/ToDoList';
+import FreeNudes from './exercises/FreeNudes/FreeNudes';
+import BasicCalc from './exercises/Testing/BasicCalc';
 
 const App: React.FC = () => {
   return (
@@ -13,13 +15,17 @@ const App: React.FC = () => {
         {/* <HelloWorld 
         name={'Frederico'}
         company={"Heroway"}
-        since={2019} />
+        since={2019} /> */}
 
-        <ToggleLike deafultLiked={false}/> */}
+        <ToggleLike deafultLiked={false}/>
 
         {/* <Counter counterStart={0}/> */}
 
-        <ToDoList/>
+        {/* <ToDoList/> */}
+
+        {/* <FreeNudes/> */}
+
+        {/* <BasicCalc/> */}
       </header>
     </div>
   );
