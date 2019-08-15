@@ -8,6 +8,8 @@ interface ITodos {
 
 interface IState {
     todos: ITodos[],
+    idNew: number,
+    newDescription: string,
 }
 
 class ToDoList extends React.Component<any, IState, ITodos> {
@@ -15,11 +17,9 @@ class ToDoList extends React.Component<any, IState, ITodos> {
         super(props);
 
         this.state = {
-            todos: [
-            {id: 1, description: 'Study', done: false},
-            {id: 2, description: 'Dishes', done: true},
-            {id: 3, description: 'Skip Class', done: false},
-            ]
+            todos: [],
+            idNew: 0,
+            newDescription: '',
         };
     }
 
@@ -35,9 +35,31 @@ class ToDoList extends React.Component<any, IState, ITodos> {
         this.setState({todos: todos});
     };
 
+    addTodo = () => {
+        const todos = this.state.todos
+        let idNew = this.state.idNew
+        const newDescription = this.state.newDescription
+        idNew++;
+        todos.push(
+            {id: idNew, description: newDescription, done: false,}
+        )
+        
+        this.setState({
+            todos: todos,
+            idNew: idNew,
+            newDescription: '',
+        })
+    }
+
+    inputHandler = (x: any) => {
+        this.setState({newDescription: x.target.value})
+    }
+
     render() {
         return (
             <>
+                <input className="Description" type="text" onChange={this.inputHandler}/>
+                <button onClick={this.addTodo}>Add To do</button>
                 <ul>
                     {this.state.todos.map(todo => {
                         return (
